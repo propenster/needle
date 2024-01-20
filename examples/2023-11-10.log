@@ -1,0 +1,10 @@
+2023-11-24 04:22:45.144 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-24 04:22:45.145 +01:00 [INF] Hosting environment: Production
+2023-11-24 04:22:45.145 +01:00 [INF] Content root path: C:\inetpub\vhosts\myapp
+2023-11-24 04:22:45.188 +01:00 [INF] Request starting HTTP/1.1 GET https://example.com/myapp/options - -
+2023-11-24 04:22:45.479 +01:00 [INF] Executing endpoint 'HTTP: GET /myapp/options => AppOptions'
+2023-11-24 04:22:45.636 +01:00 [INF] Setting HTTP status code 200.
+2023-11-24 04:22:45.639 +01:00 [INF] Writing value of type '<>f__AnonymousType16`11' as Json.
+2023-11-24 04:22:45.667 +01:00 [INF] Executed endpoint 'HTTP: GET /myapp/options => AppOptions'
+2023-11-24 04:22:45.671 +01:00 [INF] Request https://example.com/myapp/options: 262.3906ms
+2023-11-24 04:22:45.677 +01:00 [INF] Request finished HTTP/1.1 GET https://example.com/myapp/options - - - 200 - application/json;+charset=utf-8 494.7326ms

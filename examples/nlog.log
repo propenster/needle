@@ -1,0 +1,23 @@
+  -------------- Info (2024-01-15 08:41:36.2973) --------------
+             
+             Call Site: Program.<Main>$
+             Exception Type: 
+             Exception Message: 
+             Stack Trace: 
+             Additional Info: Welcome to Retail Client Dispatcher API
+
+  -------------- Info (2024-01-15 08:41:39.0998) --------------
+             
+             Call Site: Microsoft.AspNetCore.Hosting.GenericWebHostService+Log.ListeningOnAddress
+             Exception Type: 
+             Exception Message: 
+             Stack Trace: 
+             Additional Info: Now listening on: http://127.0.0.1:XXXXX
+
+  -------------- Info (2024-01-15 08:41:39.0998) --------------
+             
+             Call Site: Microsoft.Extensions.Hosting.Internal.ConsoleLifetime.OnApplicationStarted
+             Exception Type: 
+             Exception Message: 
+             Stack Trace: 
+             Additional Info: Application started. Press Ctrl+C to shut down.
