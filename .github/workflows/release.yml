@@ -20,6 +20,6 @@ jobs:
         with:
             platforms: 'linux/amd64, darwin/amd64, windows/amd64'
             package: 'demo'
-            name: 'needle'
+            name: 'program'
             compress: 'true'
             dest: 'dist'
