@@ -1,25 +1,32 @@
-# workflow name
-name: Generate release-artifacts
+name: Release
 
-# on events
 on:
   release:
-    types: 
-        - created
+    types: [created]
 
-# workflow tasks
+permissions:
+    contents: write
+    packages: write
 jobs:
-  generate:
-    name: Generate cross-platform builds
+  release_docker:
+    runs-on: ubuntu-latest
+    
+  steps:
+
+  release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v2
-      - name: Generate build files
-        uses: thatisuday/go-cross-build@v1.0.2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: Mmx233/GoReleaseCli@v1.2.2
         with:
-            platforms: 'linux/amd64, darwin/amd64, windows/amd64'
-            package: 'demo'
-            name: 'program'
-            compress: 'true'
-            dest: 'dist'
+          target: ./cmd/derper
+          compress: tar.gz
+
+      - name: Upload assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/*.tar.gz
+          prerelease: false
