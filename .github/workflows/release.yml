@@ -1,4 +1,4 @@
-name: Release
+# .github/workflows/release.yaml
 
 on:
   release:
@@ -7,26 +7,25 @@ on:
 permissions:
     contents: write
     packages: write
-jobs:
-  release_docker:
-    runs-on: ubuntu-latest
-    
-  steps:
 
-  release:
+jobs:
+  release-linux-amd64:
+    name: release linux/amd64
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build
-        uses: Mmx233/GoReleaseCli@v1.2.2
-        with:
-          target: ./cmd/derper
-          compress: tar.gz
-
-      - name: Upload assets
-        uses: softprops/action-gh-release@v1
-        with:
-          files: build/*.tar.gz
-          prerelease: false
+    - uses: actions/checkout@v4
+    - uses: wangyoucao577/go-release-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: linux
+        goarch: amd64
+  release-windows-amd64:
+    name: release windows/amd64
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: wangyoucao577/go-release-action@v1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goos: windows
+        goarch: amd64
