@@ -16,10 +16,10 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v2
       - name: Generate build files
-        uses: thatisuday/go-cross-build@v1
+        uses: thatisuday/go-cross-build@v1.0.2
         with:
             platforms: 'linux/amd64, darwin/amd64, windows/amd64'
             package: 'demo'
-            name: 'program'
+            name: 'needle'
             compress: 'true'
             dest: 'dist'
